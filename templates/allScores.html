@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<div class="row p=1 m=0">
+    <h3 class="font-weight-bold text-success ml-1">List of Champions</h3>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Name</th>
+            <th>In Place</th>
+            <th>Moves</th>
+            <th>Time</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in result %}
+        <tr>
+            <td> {{ loop.index }} </td>
+            <td> {{ r.name }}</td>
+            <td> {{ r.inplace }} </td>
+            <td> {{ r.moves }} </td>
+            <td> {{ r.seconds }} </td>
+            <td> {{ r.recorddate }} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

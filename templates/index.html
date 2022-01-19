@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById(15).style.visibility = 'hidden';
+        //console.log('set hidden to plate id: ' + 1);
+    }, false);
+</script>
+
+<h3 class="font-weight-bold text-left text-success" id="headerText">Press "Start Game" button</h3>
+
+<div class="row p-0 m-0">
+    <div class="col-4 p-0 m-0">
+        <div class="row p-0 m-0">
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="0">1</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="1">2</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="2">3</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="3">4</div>
+            </div>
+        </div>
+        <div class="row p-0 m-0">
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="4">5</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="5">6</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="6">7</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-success cust-width" id="7">8</div>
+            </div>
+        </div>
+        <div class="row p-0 m-0">
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="8">9</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="9">10</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="10">11</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="11">12</div>
+            </div>
+        </div>
+        <div class="row p-0 m-0">
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="12">13</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="13">14</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="14">15</div>
+            </div>
+            <div class="col-xs-1 p-0 m-0">
+                <div class="btn btn-block btn-outline-success border-succes cust-width" id="15">0</div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row p-0 m-0">
+            <div class="col-lg-3 p-0 m-0">
+                <div class="btn btn-block btn-outline-success cust-width-255" onclick="StartStopGame(this)" id="play">Start Game</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 p-0 m-0">
+
+        <form id="gamePage" action="score" method="POST">
+            
+            <div class="row text-warning font-weight-bold p-0 m-0">
+                <div class="col-5 text-left p-0 m-0">
+                    <span>In place:</span>
+                </div>
+                <div class="col-xs-1">
+                    <input type="text" readonly class="form-control-plaintext text-warning font-weight-bold" id="setedCounter" name="inPlace" value="15" >
+                </div>
+            </div>
+            
+            <div class="row text-warning font-weight-bold p-0 m-0">
+                <div class="col-5 text-left p-0 m-0">
+                    <span>Moves:</span>
+                </div>
+                <div class="col-xs-1 text-right">
+                    <input type="text" readonly class="form-control-plaintext text-warning font-weight-bold" id="counter" name="counter" value="0" >
+                </div>
+            </div>
+            <div class="row text-warning font-weight-bold p-0 m-0">
+                <div class="col-5 text-left p-0 m-0">
+                    <span>Time:</span>
+                </div>
+                <div class="col-xs-1 text-right">
+                    <input type="text" readonly class="form-control-plaintext text-warning font-weight-bold" id="timer" name="timer" value="0" >
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+{% endblock %}

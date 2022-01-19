@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<!--<div class="row p=1 m=0">-->
+<!--    <div class="col-6">-->
+<!--        <h3 class="font-weight-bold text-left text-success ml-1">Your Score</h3>-->
+<!--    </div>-->
+<!--    <div class="col-6">-->
+<!--        <h3 class="font-weight-bold text-left text-danger ml-1">Last Best Score</h3>-->
+<!--    </div>-->
+<!--</div>-->
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-left text-success">
+                Goal
+            </th>
+            <th class="text-warning">
+                Your Score
+            </th>
+            <th class="text-danger">
+                Best Score
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-left text-success">
+                Plates In Place:
+            </td>
+            <td class="text-warning">
+                {{ inPlace }}
+            </td>
+            <td class="text-danger">
+                {{ bestInPlace }}
+            </td>
+        </tr>
+             <td class="text-left text-success">
+                Number Of Moves:
+            </td>
+            <td class="text-warning">
+                {{ counter }}
+            </td>
+            <td class="text-danger">
+                {{ bestCounter }}
+            </td>
+        </tr>
+        </tr>
+             <td class="text-left text-success">
+                Game Time, s:
+            </td>
+            <td class="text-warning">
+                {{ timer }}
+            </td>
+            <td class="text-danger">
+                {{ bestTimer }}
+            </td>
+        </tr>
+    </tbody>
+    
+</table>
+<form action="/allScores" method="post">
+
+    <div class="row">
+        <div class="col-3">
+            <input class="form-control bg-outline-success" id="nameText" name="name" type="text" placeholder="Enter your name"/>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-3">
+            <button class="btn btn-outline-success btn-block" id="nameText" name="name" type="submit" >Save</button>
+        </div>
+        <div class="col-3">
+            <a class="btn btn-outline-success btn-block" href="\index" id="nameText" name="name" >Not now</a>
+        </div>
+    </div>
+    
+    <input hidden type="text" id="setedCounter" name="inPlace" value="{{ inPlace }}" >
+    <input hidden type="text" id="bestSetedCounter" name="bestInPlace" value="{{ bestInPlace }}" >
+    <input hidden type="text" id="counter" name="counter" value="{{ counter }}" >
+    <input hidden type="text" id="bestCounter" name="bestCounter" value="{{ bestCounter }}" >
+    <input hidden type="text" id="timer" name="timer" value="{{ timer }}" >
+    <input hidden type="text" id="bestTimer" name="bestTimer" value="{{ bestTimer }}" >
+    
+</form>
+
+{% endblock %}
